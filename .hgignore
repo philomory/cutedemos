@@ -1,0 +1,5 @@
+syntax: regex
+^detritus
+
+syntax: glob
+.DS_Store
