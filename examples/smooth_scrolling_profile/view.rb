@@ -1,11 +1,12 @@
 require 'cute_view'
+require 'ruby-prof'
 
 module CuteDemos
-  module ScrollingProfile
-    class ScrollingProfileView < CuteView
+  module SmoothScrollingProfile
+    class SmoothScrollingProfileView < CuteView
       
       def [](x,y,z)
-        world[x,y]
+        z == 0 ? world[x,y] : nil rescue nil
       end
       
       def world_depth
@@ -20,13 +21,17 @@ module CuteDemos
         true
       end
       
+      def smooth_scroll?
+        true
+      end
+      
       def center_on
         {:x => world.player_x}
       end
       
       def draw
-        draw_block(:pink_girl,world.player_x,world.player_y,0)
         image_manager.image(:sky).draw(0,0,0)
+        draw_block(:pink_girl,world.player_x,world.player_y,0,false)
       end
     end
   end

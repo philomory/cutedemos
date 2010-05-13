@@ -13,6 +13,6 @@ module CuteDemos
   end
 end
 
-%w{simple_flat scrolling_flat simple_heightmap simple_profile scrolling_profile}.each do |dir|
+%w{simple_flat scrolling_flat simple_heightmap simple_profile scrolling_profile smooth_scrolling_profile}.each do |dir|
   require File.join(dir,'demo')
 end

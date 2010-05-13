@@ -22,7 +22,7 @@ module CuteDemos
     end
     
     def draw_shadows(h,v,d)
-      x,y,z = *screen_coordinates(h,v,d)
+      x,y,z = *screen_coordinates(h-horizontal_offset,v,d-depth_offset)
       shadow_directions(h,v,d).each do |dir|
         image_manager.shadow(dir).draw(x,y,z,@scale,@scale)
       end

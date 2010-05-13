@@ -16,6 +16,10 @@ module CuteDemos
         world[x,z].terrain
       end
 
+      def draw_partial?
+        true
+      end
+
       def center_on
         {:x=>world.player_x,:z=>world.player_y}
       end

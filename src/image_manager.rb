@@ -16,7 +16,7 @@ module CuteDemos
       @tile_width, @tile_height, @tile_depth = 100,40,80
       @blank_at_top = 50
       
-      @images = {
+      @blocks = {
         :grass => load_image("Grass Block.png"),
         :stone => load_image("Stone Block.png"),
         :space => NilDraw,
@@ -53,9 +53,20 @@ module CuteDemos
         :south_west => load_image("Shadow South West.png")
       }
       
+      @images = {
+        :sky        => load_image("Sky.png")
+        
+      }
+      
     end
     
-    def [](key)
+    def block(key)
+      @blocks[key]
+    end
+    
+    alias_method :[], :block
+    
+    def image(key)
       @images[key]
     end
     

@@ -20,6 +20,10 @@ module CuteDemos
         true
       end
       
+      def draw
+        image_manager.image(:sky).draw(0,0,0)
+      end
+      
     end
   end
 end
